@@ -1,0 +1,6 @@
+{
+  "name": "Tactile Collage Portfolio",
+  "description": "A responsive, tactile portfolio website with saturated collage aesthetics, editorial project exploration, and structured case studies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
