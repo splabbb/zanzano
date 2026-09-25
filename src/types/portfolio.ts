@@ -12,6 +12,7 @@ export interface VisualPanel {
   title: string;
   caption: string;
   type: 'poster' | 'matrix' | 'system' | 'vessel' | 'monolith' | 'tactile';
+  imageUrl?: string; // Optional path to custom image in /public (e.g. '/my-artifact.jpg')
 }
 
 export interface PortfolioProject {
@@ -23,6 +24,7 @@ export interface PortfolioProject {
   summary: string;   // Explicitly notes layout demonstration, not real commission
   role: string;      // Clearly labeled placeholder
   approach: string;  // Clearly labeled placeholder
+  imageUrl?: string; // Optional path to custom image in /public (e.g. '/project1.jpg')
   visualPanels: VisualPanel[];
 }
 

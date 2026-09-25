@@ -7,14 +7,30 @@ import { VisualPanel } from '../types/portfolio';
 
 interface ProjectArtworkProps {
   projectId: string;
+  imageUrl?: string;
+  title?: string;
   className?: string;
 }
 
 /**
  * Main project preview artwork for the 12-column editorial grid.
- * Saturated, tactile, local vector SVG using strictly approved tokens.
+ * Saturated, tactile, local vector SVG using strictly approved tokens,
+ * or user-provided custom image from /public if configured.
  */
-export function ProjectArtwork({ projectId, className = '' }: ProjectArtworkProps) {
+export function ProjectArtwork({ projectId, imageUrl, title = 'Project Artwork', className = '' }: ProjectArtworkProps) {
+  if (imageUrl) {
+    return (
+      <div className={`relative overflow-hidden bg-[#2C61AA] p-4 flex items-center justify-center ${className}`}>
+        <img
+          src={imageUrl}
+          alt={title}
+          loading="lazy"
+          className="w-full h-auto max-h-[360px] object-contain border-2 border-[#030203] shadow-[4px_4px_0px_#030203]"
+        />
+      </div>
+    );
+  }
+
   switch (projectId) {
     case 'demo-01':
       // Chromatypic Poster Form
@@ -519,6 +535,21 @@ export function ProjectArtwork({ projectId, className = '' }: ProjectArtworkProp
  * Each project contains multiple distinct panels demonstrating different study facets.
  */
 export function ModalPanelArtwork({ panel }: { panel: VisualPanel }) {
+  if (panel.imageUrl) {
+    return (
+      <div className="bg-[#2C61AA] p-4 sm:p-6 border-2 border-[#030203]">
+        <div className="aspect-[16/10] w-full flex items-center justify-center overflow-hidden">
+          <img
+            src={panel.imageUrl}
+            alt={panel.title}
+            loading="lazy"
+            className="w-full h-auto max-h-full object-contain border-2 border-[#030203] shadow-[4px_4px_0px_#030203]"
+          />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-[#2C61AA] p-4 sm:p-6 border-2 border-[#030203]">
       <div className="aspect-[16/10] w-full flex items-center justify-center overflow-hidden">

@@ -105,7 +105,11 @@ export function WorkSection({ projects }: WorkSectionProps) {
               >
                 {/* Visual Preview Artwork Area */}
                 <div className="border-b-2 border-[#030203] bg-[#2C61AA]">
-                  <ProjectArtwork projectId={project.id} />
+                  <ProjectArtwork
+                    projectId={project.id}
+                    imageUrl={project.imageUrl}
+                    title={project.title}
+                  />
                 </div>
 
                 {/* Metadata & Trigger on Solid Paper Reading Surface */}

@@ -76,11 +76,18 @@ Each entry in the `projects` array represents an archive entry with case-study p
   summary: 'Your project overview...',
   role: 'Your discipline role...',
   approach: 'Your methodology...',
+  // Optional: add your custom image placed in the /public folder:
+  // imageUrl: '/my-project.jpg',
   visualPanels: [ ... ]
 }
 ```
 
-### 3. Contact & Social Links
+### 3. Adding Custom Images (`public/`)
+Place any custom images (e.g. photos, project screenshots, or `Zanzano.jpeg`) into the `/public/` directory at the project root.
+- They are served directly at the root URL (e.g. `/public/my-image.jpg` is accessed as `"/my-image.jpg"`).
+- Set `imageUrl: '/my-image.jpg'` on any project or visual panel in `src/data/portfolioData.ts` to seamlessly display your custom image.
+
+### 4. Contact & Social Links
 Configure the `contact` block:
 - **With active email:** Set `email: "hello@yourdomain.com"`. This activates the direct "Send email" button and working clipboard copy button with live announcement.
 - **Without email:** Set `email: null` or `""`. This automatically displays the clean "Contact details coming soon" state without dead links or fake form submissions.
